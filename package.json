@@ -1,0 +1,57 @@
+{
+  "name": "nuxt-envalid",
+  "version": "0.0.1",
+  "description": "A Nuxt.js module thats validates your env variables and loads them cleaned into your application context",
+  "keywords": [
+    "nuxt-module",
+    "javascript",
+    "envalid"
+  ],
+  "bugs": {
+    "url": "https://github.com/manuelhenke/nuxt-envalid/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelhenke/nuxt-envalid.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Manuel Henke",
+    "email": "contact@henkebyte.com",
+    "url": "https://henkebyte.com/"
+  },
+  "main": "./dist/module.js",
+  "types": "./dist/module.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "siroc build",
+    "dev": "nuxt dev test/fixture/basic",
+    "lint": "eslint --ext .js,.ts .",
+    "prepare": "husky install",
+    "prepublishOnly": "yarn build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "envalid": "^7.3.1"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxt/test-utils": "latest",
+    "@nuxt/types": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "eslint": "latest",
+    "husky": "latest",
+    "jest": "latest",
+    "nuxt": "latest",
+    "siroc": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
