@@ -20,16 +20,19 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 12, 14, 16 ]
     timeout-minutes: 5
 
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
-      - name: Setup node env 🏗
+      - name: Setup node env with ${{ matrix.node-version }} 🏗
         uses: actions/setup-node@v3
         with:
-          node-version-file: '.nvmrc'
+          node-version: ${{ matrix.node-version }}
 
       - name: Get yarn cache directory path 🔃
         id: yarn-cache-dir-path
