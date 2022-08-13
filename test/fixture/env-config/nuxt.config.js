@@ -1,4 +1,4 @@
-import { bool, str } from '../../../src/module'
+import NuxtEnvalid, { bool, str } from '../../../src/module'
 
 export default {
   rootDir: __dirname,
@@ -6,9 +6,7 @@ export default {
     TITLE: 'title',
     IS_PUBLIC: true
   },
-  buildModules: [
-    '../../../src/module.ts'
-  ],
+  buildModules: [NuxtEnvalid],
   envalid: {
     specs: {
       TITLE: str(),

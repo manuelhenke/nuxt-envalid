@@ -3,9 +3,7 @@ import { cleanEnv } from 'envalid'
 import { name, version } from '../package.json'
 import { Options } from './types'
 
-export * from 'envalid/dist/validators'
-export * from 'envalid/dist/errors'
-export { testOnly } from 'envalid'
+export { bool, email, host, json, num, port, str, url, makeValidator, testOnly, EnvError, EnvMissingError } from 'envalid'
 
 export type ModuleOptions = Options | (() => Options)
 

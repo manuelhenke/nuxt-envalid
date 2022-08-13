@@ -1,6 +1,6 @@
 {
   "name": "nuxt-envalid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Nuxt.js module thats validates your env variables and loads them cleaned into your application context",
   "keywords": [
     "nuxt-module",
