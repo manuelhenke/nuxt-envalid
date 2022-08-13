@@ -21,11 +21,14 @@ yarn add --dev nuxt-envalid # or npm install --save-dev nuxt-envalid
 
 ```js
 export default {
-  buildModules: [
-    // Simple usage
-    'nuxt-envalid',
+  buildModules: ['nuxt-envalid']
+}
+```
 
-    // With options
+### Using inline options
+```js
+export default {
+  buildModules: [
     ['nuxt-envalid', { /* module options */ }]
   ]
 }
@@ -58,6 +61,7 @@ export default {
       )
     ]
   ],
+  /* or at top level */ 
   envalid: () => ({
     /* module options */
   })
