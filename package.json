@@ -44,7 +44,7 @@
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/eslint-config-typescript": "^5.0.0",
     "@types/jest": "^26.0.24",
-    "@types/node": "^14.18.23",
+    "@types/node": "^16.11.48",
     "eslint": "^7.32.0",
     "husky": "^8.0.1",
     "jest": "^26.0.20s",
