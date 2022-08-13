@@ -29,6 +29,7 @@
     "build": "siroc build",
     "dev": "nuxt dev test/fixture/basic",
     "lint": "eslint --ext .js,.ts .",
+    "lintfix": "yarn lint --fix",
     "prepare": "husky install",
     "prepublishOnly": "yarn build",
     "test": "jest"
@@ -46,6 +47,8 @@
     "@types/jest": "^28.1.6",
     "@types/node": "^16.11.48",
     "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
     "jest": "^26.0.20s",
     "nuxt": "^2.15.8",

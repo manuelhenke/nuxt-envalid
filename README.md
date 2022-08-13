@@ -44,6 +44,29 @@ export default {
 }
 ```
 
+### Using a function to provide options
+
+```js
+export default {
+  buildModules: [
+    [
+    'nuxt-envalid',
+      () => (
+        {
+          /* module options */
+        }
+      )
+    ]
+  ],
+  envalid: () => ({
+    /* module options */
+  })
+}
+```
+
+### Hierarchy
+Defining module options inline will overwrite module options defined at top level.
+
 ## Options
 
 ### `specs`
