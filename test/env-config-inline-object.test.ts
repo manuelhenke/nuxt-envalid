@@ -2,8 +2,7 @@ import { setupTest, getNuxt } from '@nuxt/test-utils'
 
 describe('key as function', () => {
   setupTest({
-    server: true,
-    fixture: 'fixture/env-config'
+    fixture: 'fixture/env-config-inline-object'
   })
 
   test('test env option', () => {
