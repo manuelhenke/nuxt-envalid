@@ -41,7 +41,7 @@ async function getOptions(moduleOptions: ModuleOptions): Promise<Options> {
   };
 }
 
-const nuxtModule: Module<ModuleOptions> = async function(moduleOptions) {
+const nuxtModule: Module<ModuleOptions> = async function (moduleOptions) {
   const { options, specs }: Options = await getOptions.call(this, moduleOptions);
 
   const env = {
@@ -51,7 +51,7 @@ const nuxtModule: Module<ModuleOptions> = async function(moduleOptions) {
 
   const cleanEnvConfig = cleanEnv(env, specs, options);
 
-  Object.keys(specs).forEach(key => {
+  Object.keys(specs).forEach((key) => {
     this.options.env[key] = cleanEnvConfig[key];
     process.env[key] = cleanEnvConfig[key];
   });

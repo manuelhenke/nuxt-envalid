@@ -1,6 +1,6 @@
 {
   "name": "nuxt-envalid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Nuxt.js module thats validates your env variables and loads them cleaned into your application context",
   "keywords": [
     "nuxt-module",
@@ -28,16 +28,21 @@
   "scripts": {
     "build": "siroc build",
     "dev": "nuxt dev test/fixture/basic",
-    "lint": "eslint --ext .js,.ts .",
-    "lintfix": "yarn lint --fix",
+    "lint": "yarn lint:js && yarn lint:prettier",
+    "lint:js": "eslint --ext \".js,.ts\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check --ignore-path .gitignore .",
+    "lintfix": "yarn lint:js --fix && prettier --write --list-different . ",
     "prepare": "husky install",
     "prepublishOnly": "yarn build",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "envalid": "^7.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
     "@babel/preset-typescript": "^7.18.6",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
@@ -49,10 +54,13 @@
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sonarjs": "^0.15.0",
     "husky": "^8.0.1",
     "jest": "^26.0.20s",
     "nuxt": "^2.15.8",
-    "siroc": "^0.16.0"
+    "prettier": "^2.7.1",
+    "siroc": "^0.16.0",
+    "typescript": "^4.7.4"
   },
   "publishConfig": {
     "access": "public"

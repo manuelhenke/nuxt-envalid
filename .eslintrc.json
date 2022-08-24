@@ -1,6 +1,7 @@
 {
   "extends": [
     "@nuxtjs/eslint-config-typescript",
+    "plugin:sonarjs/recommended",
     "plugin:prettier/recommended"
   ]
 }

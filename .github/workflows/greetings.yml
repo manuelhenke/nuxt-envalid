@@ -15,6 +15,6 @@ jobs:
           issue-message: |
             Thank you for posting an issue!
 
-            As a reminder, have you checked the [code of conduct](https://github.com/manuelhenke/.github/blob/main/CODE_OF_CONDUCT.md)?
+            As a reminder, have you checked out the [code of conduct](https://github.com/manuelhenke/.github/blob/main/CODE_OF_CONDUCT.md)?
           pr-message: |
-            Thank you for your first contribution to the project! I will take a look at you pull request as soon as possible. In the meantime, you should check that your PR follows the the [contributor guidelines](https://github.com/manuelhenke/.github/blob/main/CONTRIBUTING.md). This will make it easier to review the code and get it merged faster. Thanks!
+            Thank you for your first contribution to the project! Someone will look at your request as soon as possible. In the meantime, check that your PR meets the [contributor guidelines](https://github.com/manuelhenke/.github/blob/main/CONTRIBUTING.md). This will make it easier to review the code and speed up the merge. Thank you!

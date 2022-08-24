@@ -2,7 +2,7 @@ import { setupTest } from '@nuxt/test-utils';
 
 describe('key as function', () => {
   test('test env option', () => {
-    const mockExit = jest.spyOn(process, 'exit').mockImplementation(number => {
+    const mockExit = jest.spyOn(process, 'exit').mockImplementation((number) => {
       throw new Error('process.exit: ' + number);
     });
     expect(() => {

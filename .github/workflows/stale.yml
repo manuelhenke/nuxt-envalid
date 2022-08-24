@@ -23,9 +23,9 @@ jobs:
           days-before-issue-stale: 30
           days-before-issue-close: 14
           stale-issue-label: 'no-issue-activity'
-          stale-issue-message: 'This issue is stale because it has been open for 30 days with no activity. If it remains inactive, it will be closed in 14 days.'
-          close-issue-message: 'This issue was closed because it has been inactive for 14 days since being marked as stale.'
+          stale-issue-message: 'This issue is stale because it has been open for 30 days and has no activity. If it remains inactive, it will be closed in 14 days.'
+          close-issue-message: 'This issue has been closed because it has been inactive for 14 days since being marked as stale.'
           days-before-pr-stale: 30
           days-before-pr-close: -1
           stale-pr-label: 'no-pr-activity'
-          stale-pr-message: 'This pull request is stale because it has been open for 30 days with no activity.'
+          stale-pr-message: 'This pull request is stale because it has been open for 30 days and has no activity.'
