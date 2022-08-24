@@ -11,7 +11,10 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: release-please-action
+          package-name: nuxt-envalid
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
+          command: github-release
       # The logic below handles the npm publication:
       - uses: actions/checkout@v3
         # these if statements ensure that a publication only occurs when
