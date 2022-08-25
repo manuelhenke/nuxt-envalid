@@ -1,11 +1,17 @@
+name: release-please
+
 on:
   push:
-    branches:
-      - main
-name: release-please
+    branches: ['main']
+
 jobs:
   release-please:
+    name: Release new version
     runs-on: ubuntu-latest
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/nuxt-envalid
+
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
