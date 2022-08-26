@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/manuelhenke/nuxt-envalid/compare/v0.0.4...v0.0.5) (2022-08-26)
+
+
+### Bug Fixes
+
+* publish new version ([7aba387](https://github.com/manuelhenke/nuxt-envalid/commit/7aba387e20da5491c87bcb5677d280b72fbad55b))
+
 ## [0.0.4](https://github.com/manuelhenke/nuxt-envalid/compare/v0.0.3...v0.0.4) (2022-08-26)
 
 
