@@ -19,18 +19,14 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-defaults:
-  run:
-    working-directory: ./docs
+env:
+  WORKING_DIRECTORY: ./docs
 
 jobs:
   # Build job
   build:
     name: Build jekyll site
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./docs
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -41,6 +37,7 @@ jobs:
           ruby-version: '3.0' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
+          working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Setup Pages
         id: pages
@@ -49,12 +46,16 @@ jobs:
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        working-directory: ${{ env.WORKING_DIRECTORY }}
         env:
           JEKYLL_ENV: production
 
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v1
+        with:
+          path: ${{ env.WORKING_DIRECTORY }}/_site
+          retention-days: 1
 
   # Deployment job
   deploy:

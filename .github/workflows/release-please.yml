@@ -20,14 +20,20 @@ jobs:
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
 
+  publish:
+    if: ${{ needs.create-release.outputs.release_created }}
+    needs: create-release
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/nuxt-envalid
+
+    steps:
       # The logic below handles the npm publication:
       - uses: actions/checkout@v3
-        # these if statements ensure that a publication only occurs when
-        # a new release is created:
-        if: ${{ steps.release.outputs.release_created }}
 
       - name: tag major and minor versions
-        if: ${{ steps.release.outputs.release_created }}
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
@@ -41,16 +47,6 @@ jobs:
           git push origin v${{ steps.release.outputs.major }}
           git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
 
-  publish:
-    if: ${{ needs.create-release.outputs.release_created }}
-    needs: create-release
-    name: Publish to npm
-    runs-on: ubuntu-latest
-    environment:
-      name: npm
-      url: https://www.npmjs.com/package/nuxt-envalid
-
-    steps:
       - name: Setup node env 🏗
         id: setup
         uses: actions/setup-node@v3
