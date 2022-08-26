@@ -1,0 +1,19 @@
+div[class^="language"], div[class^="highlighter"], div.listingblock {
+  position: relative;
+
+  &:hover button {
+    opacity: 1;
+  }
+
+  button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    opacity: 0;
+    &:focus, :active {
+      opacity: 1;
+    }
+  }
+}

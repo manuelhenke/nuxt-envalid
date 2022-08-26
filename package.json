@@ -14,11 +14,12 @@
     "type": "git",
     "url": "git+https://github.com/manuelhenke/nuxt-envalid.git"
   },
+  "homepage": "https://nuxt-envalid.henkebyte.com",
   "license": "MIT",
   "author": {
     "name": "Manuel Henke",
     "email": "contact@henkebyte.com",
-    "url": "https://henkebyte.com/"
+    "url": "https://henkebyte.com"
   },
   "main": "./dist/module.js",
   "types": "./dist/module.d.ts",
@@ -29,9 +30,9 @@
     "build": "siroc build",
     "dev": "nuxt dev test/fixture/basic",
     "lint": "yarn lint:js && yarn lint:prettier",
-    "lint:js": "eslint --ext \".js,.ts\" --ignore-path .gitignore .",
-    "lint:prettier": "prettier --check --ignore-path .gitignore . '!CHANGELOG.md'",
-    "lintfix": "yarn lint:js --fix && prettier --write --list-different --ignore-path .gitignore . '!CHANGELOG.md'",
+    "lint:js": "eslint --ext \".js,.ts\" .",
+    "lint:prettier": "prettier --check .",
+    "lintfix": "yarn lint:js --fix && prettier --write --list-different .",
     "prepare": "husky install",
     "prepublishOnly": "yarn build",
     "test": "jest --coverage"
