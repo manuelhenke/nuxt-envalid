@@ -7,14 +7,19 @@
 [![License](https://img.shields.io/github/license/manuelhenke/nuxt-envalid)](./LICENSE)
 [![NPM version](https://img.shields.io/npm/v/nuxt-envalid.svg?style=flat)](https://www.npmjs.com/package/nuxt-envalid)
 
-> Dead simple [Envalid](https://github.com/af/envalid) integration for [Nuxt](https://nuxtjs.org).
+> Dead simple [Envalid](https://github.com/af/envalid) integration for [Nuxt 2](https://nuxtjs.org).
 
 - [✨ &nbsp;Release Notes](CHANGELOG.md)
 - [📖 &nbsp;Documentation](https://nuxt-envalid.henkebyte.com)
 
 ## Features
 
-A Nuxt.js module thats validates your env variables and loads them cleaned into your application context. Uses [Envalid](https://github.com/af/envalid) under the hood.
+- Define a required schema for your environment variables
+- Validates variables in the `env` property of the `nuxt.config.js`
+- Validates variables in `process.env`
+- Validates variables present in the `.env` file, if loaded together with [@nuxtjs/dotenv](https://github.com/nuxt-community/dotenv-module)
+- Fails the build process if a variable is missing
+- Loads them cleaned and enriched with default values into your application context (`process.env` and `context.env`)
 
 ## Getting Started
 

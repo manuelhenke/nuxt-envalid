@@ -40,7 +40,7 @@ export default {
 };
 ```
 
-There a pretty much four different ways to provide a configuration for this module. You are free the choose which fits you the most.
+There a pretty much four different ways to provide a [configuration]({{ site.baseurl }}{% link configuration.md %}) for this module. You are free the choose which fits you the most.
 
 ### Inline config
 

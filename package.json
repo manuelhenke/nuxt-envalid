@@ -35,7 +35,8 @@
     "lintfix": "yarn lint:js --fix && prettier --write --list-different .",
     "prepare": "husky install",
     "prepublishOnly": "yarn build",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "serve-docs": "cd docs/ && bundle exec jekyll serve"
   },
   "dependencies": {
     "envalid": "^7.3.1"
