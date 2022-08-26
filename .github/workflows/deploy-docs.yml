@@ -43,6 +43,15 @@ jobs:
         id: pages
         uses: actions/configure-pages@v2
 
+      - name: Bugfix
+        id: bugfix
+        run: ls
+
+      - name: Bugfix2
+        id: bugfix2
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+        run: ls
+
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
