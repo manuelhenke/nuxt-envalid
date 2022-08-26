@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
+      major: ${{ steps.release.outputs.major }}
+      minor: ${{ steps.release.outputs.minor }}
+      path: ${{ steps.release.outputs.path }}
 
     steps:
       - uses: google-github-actions/release-please-action@v3
@@ -38,14 +41,14 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/google-github-actions/release-please-action.git"
-          git tag -d v${{ steps.release.outputs.major }} || true
-          git tag -d v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
-          git push origin :v${{ steps.release.outputs.major }} || true
-          git push origin :v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
-          git tag -a v${{ steps.release.outputs.major }} -m "Release v${{ steps.release.outputs.major }}"
-          git tag -a v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -m "Release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}"
-          git push origin v${{ steps.release.outputs.major }}
-          git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
+          git tag -d v${{ needs.create-release.outputs.major }} || true
+          git tag -d v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }} || true
+          git push origin :v${{ needs.create-release.outputs.major }} || true
+          git push origin :v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }} || true
+          git tag -a v${{ needs.create-release.outputs.major }} -m "Release v${{ needs.create-release.outputs.major }}"
+          git tag -a v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }} -m "Release v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }}"
+          git push origin v${{ needs.create-release.outputs.major }}
+          git push origin v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }}
 
       - name: Setup node env 🏗
         id: setup
