@@ -266,7 +266,7 @@ DEPENDENCIES
   jekyll-seo-tag (>= 2.8.0)
   jekyll-tabs
   minima (~> 2.5, >= 2.5.1)
-  tzinfo (~> 1.2, >= 1.2.10)
+  tzinfo (~> 2.0, >= 2.0.5)
   tzinfo-data
   wdm (~> 0.1.1)
   webrick

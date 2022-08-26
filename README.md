@@ -9,8 +9,8 @@
 
 > Dead simple [Envalid](https://github.com/af/envalid) integration for [Nuxt 2](https://nuxtjs.org).
 
-- [✨ &nbsp;Release Notes](CHANGELOG.md)
-- [📖 &nbsp;Documentation](https://nuxt-envalid.henkebyte.com)
+- ✨ &nbsp;[Release Notes](CHANGELOG.md)
+- 📖 &nbsp;[Documentation](https://nuxt-envalid.henkebyte.com)
 
 ## Features
 
