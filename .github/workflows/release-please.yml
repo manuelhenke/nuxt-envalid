@@ -5,12 +5,11 @@ on:
     branches: ['main']
 
 jobs:
-  release-please:
-    name: Release new version
+  create-release:
+    name: Create Release
     runs-on: ubuntu-latest
-    environment:
-      name: npm
-      url: https://www.npmjs.com/package/nuxt-envalid
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
 
     steps:
       - uses: google-github-actions/release-please-action@v3
@@ -42,19 +41,27 @@ jobs:
           git push origin v${{ steps.release.outputs.major }}
           git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
 
+  publish:
+    if: ${{ needs.create-release.outputs.release_created }}
+    needs: create-release
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/nuxt-envalid
+
+    steps:
       - name: Setup node env 🏗
         id: setup
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-        if: ${{ steps.release.outputs.release_created }}
 
-      - run: yarn install --frozen-lockfile
-        if: ${{ steps.release.outputs.release_created }}
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn install --frozen-lockfile
 
       - name: Publish to npm 📩
         id: npm-publish
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-        if: ${{ steps.release.outputs.release_created }}
