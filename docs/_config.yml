@@ -18,6 +18,20 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+# Requiring: jekyll-seo-tag
+# Requiring: jekyll-seo-tag
+# Requiring: jekyll-coffeescript
+# Requiring: jekyll-commonmark-ghpages
+# Requiring: jekyll-gist
+# Requiring: jekyll-github-metadata
+# Requiring: jekyll-paginate
+# Requiring: jekyll-relative-links
+# Requiring: jekyll-optional-front-matter
+# Requiring: jekyll-readme-index
+# Requiring: jekyll-default-layout
+# Requiring: jekyll-titles-from-headings
+# Requiring: jekyll-remote-theme
+
 title: nuxt&#8209;envalid
 description: A Nuxt.js module thats validates your env variables and loads them cleaned into your application context. Uses envalid under the hood.
 domain: nuxt-envalid.henkebyte.com
