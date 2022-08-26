@@ -23,15 +23,13 @@
 
 ## Getting Started
 
-1. Add `nuxt-envalid` dependency to your project
+1. Add `nuxt-envalid` as dev-dependency to your project via `yarn` or `npm`:
 
-```bash
+```sh
 yarn add --dev nuxt-envalid # or npm install --save-dev nuxt-envalid
 ```
 
-2. Add `nuxt-envalid` to the `buildModules` section of `nuxt.config.js`
-
-:warning: If you are using a Nuxt version previous than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
+2. Add `nuxt-envalid` to the `buildModules` section of `nuxt.config.js`:
 
 ```js
 // nuxt.config.js
@@ -39,6 +37,8 @@ export default {
   buildModules: ['nuxt-envalid'],
 };
 ```
+
+:warning: If you are using a Nuxt version previous than **v2.9** you have to install the module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
 ### Inline config
 

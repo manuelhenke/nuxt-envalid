@@ -1,4 +1,6 @@
-div[class^="language"], div[class^="highlighter"], div.listingblock {
+div[class^="language"],
+div[class^="highlighter"],
+div.listingblock {
   position: relative;
 
   &:hover button {
@@ -12,8 +14,72 @@ div[class^="language"], div[class^="highlighter"], div.listingblock {
     transform: translateY(-50%);
 
     opacity: 0;
-    &:focus, :active {
+
+    &:focus,
+    :active {
       opacity: 1;
+    }
+  }
+}
+
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  position: relative;
+
+  li {
+    flex: none;
+    position: relative;
+    list-style: none;
+
+    &.active a {
+      border-color: #4c6de2;
+      opacity: 1;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      padding: 9px 20px;
+      border-bottom: 2px solid transparent;
+      border-bottom-color: transparent;
+      font-size: 12px;
+      text-transform: uppercase;
+      transition: color .1s ease-in-out;
+      line-height: 20px;
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  }
+}
+
+.tab-content {
+  padding: 0;
+
+  li {
+    display: none;
+
+    &.active {
+      display: initial;
+    }
+  }
+}
+
+// Reset list styles for Just the Docs
+.tab,
+.tab-content {
+  @at-root {
+    ul#{&} {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+
+  li {
+    &::before {
+      display: none !important;
     }
   }
 }

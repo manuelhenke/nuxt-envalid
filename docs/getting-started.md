@@ -17,21 +17,25 @@ nav_order: 2
 
 ## Install
 
-Add `nuxt-envalid` dependency to your project via `yarn` or `npm`:
+Add `nuxt-envalid` as dev-dependency to your project via `yarn` or `npm`:
 
-```bash
-yarn add --dev nuxt-envalid
-```
-```bash
-npm install --save-dev nuxt-envalid
-```
+{% tabs install %}
+  {% tab install yarn %}
+  ```sh
+  yarn add --dev nuxt-envalid
+  ```
+  {% endtab %}
+
+  {% tab install npm %}
+  ```sh
+  npm install --save-dev nuxt-envalid
+  ```
+  {% endtab %}
+{% endtabs %}
 
 ## Nuxt config
 
-Add `nuxt-envalid` to the `buildModules` section of `nuxt.config.js`.
-
-{: .warning }
-If you are using a Nuxt version previous than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
+Add `nuxt-envalid` to the `buildModules` section of `nuxt.config.js`:
 
 ```js
 // nuxt.config.js
@@ -39,6 +43,9 @@ export default {
   buildModules: ['nuxt-envalid'],
 };
 ```
+
+{: .warning }
+If you are using a Nuxt version previous than **v2.9** you have to install the module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
 There a pretty much four different ways to provide a [configuration]({{ site.baseurl }}{% link configuration.md %}) for this module. You are free the choose which fits you the most.
 

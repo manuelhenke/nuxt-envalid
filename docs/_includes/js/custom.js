@@ -1,3 +1,4 @@
+// Choose theme based on system preference
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
   if (event.matches) {
     jtd.setTheme('custom-dark');
@@ -20,6 +21,7 @@ function docReady(fn) {
   }
 }
 
+// Add Copy button to code block
 docReady(function () {
   const codeBlocks = document.querySelectorAll('pre.highlight');
 
@@ -43,5 +45,49 @@ docReady(function () {
         copyButton.innerText = 'Copy';
       }, fourSeconds);
     });
+  });
+});
+
+// Support tabbed code blocks
+const removeActiveClasses = function (ulElement) {
+  const lis = ulElement.querySelectorAll('li');
+  Array.prototype.forEach.call(lis, function(li) {
+      li.classList.remove('active');
+  });
+};
+
+const getChildPosition = (element) => {
+      const parent = element.parentNode;
+      for (let i = 0; i < parent.children.length; i++) {
+          if (parent.children[i] === element) {
+              return i;
+          }
+      }
+
+      throw new Error('No parent found');
+  };
+
+window.addEventListener('load', function () {
+  const tabLinks = document.querySelectorAll('ul.tab li a');
+
+  Array.prototype.forEach.call(tabLinks, function(link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      liTab = link.parentNode;
+      ulTab = liTab.parentNode;
+      position = getChildPosition(liTab);
+      if (liTab.className.includes('active')) {
+        return;
+      }
+
+      removeActiveClasses(ulTab);
+      tabContentId = ulTab.getAttribute('data-tab');
+      tabContentElement = document.getElementById(tabContentId);
+      removeActiveClasses(tabContentElement);
+
+      tabContentElement.querySelectorAll('li')[position].classList.add('active');
+      liTab.classList.add('active');
+    }, false);
   });
 });
