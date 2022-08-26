@@ -56,6 +56,7 @@ exclude:
     'bin/',
     'README.md',
     'Rakefile',
+    'vendor'
   ]
 
 # Set a path/url to a logo that will be displayed instead of the title

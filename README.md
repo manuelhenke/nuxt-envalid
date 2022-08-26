@@ -186,8 +186,7 @@ export default {
 
 This module will validate the result of `@nuxtjs/dotenv`.
 
-{: .warning }
-Be sure to include this module **AFTER** `@nuxtjs/dotenv`.
+:warning: Be sure to include this module **AFTER** `@nuxtjs/dotenv`.
 
 ```sh
 # .env
