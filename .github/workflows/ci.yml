@@ -16,6 +16,10 @@ on:
       - 'LICENSE'
       - 'README.md'
 
+permissions:
+  contents: read # Required when overriding permissions
+  pull-requests: write # Allow action to modify your PR
+
 jobs:
   lint:
     name: Lint
@@ -82,3 +86,5 @@ jobs:
 
       - name: Display coverage
         uses: romeovs/lcov-reporter-action@v0.2.16
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
