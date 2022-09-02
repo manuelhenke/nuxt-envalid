@@ -85,7 +85,7 @@ jobs:
         run: yarn test --coverage
 
       - name: Display coverage
-        if: matrix.node-version == 14
+        if: matrix.node-version == 16
         uses: romeovs/lcov-reporter-action@v0.2.16
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
