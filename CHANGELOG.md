@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.6](https://github.com/manuelhenke/nuxt-envalid/compare/v0.0.5...v0.0.6) (2022-09-02)
+
+
+### Features
+
+* split ci workflow in multiple jobs ([#35](https://github.com/manuelhenke/nuxt-envalid/issues/35)) ([8696f16](https://github.com/manuelhenke/nuxt-envalid/commit/8696f16ed3bbff4fa0b44e999e439ece94ffe6ac))
+
 ## [0.0.5](https://github.com/manuelhenke/nuxt-envalid/compare/v0.0.4...v0.0.5) (2022-08-26)
 
 
