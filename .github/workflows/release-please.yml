@@ -55,9 +55,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
+          cache: 'yarn'
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --immutable
 
       - name: Publish to npm 📩
         id: npm-publish
