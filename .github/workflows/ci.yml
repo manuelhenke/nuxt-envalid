@@ -80,8 +80,5 @@ jobs:
       - name: Run tests 👀
         run: yarn test --coverage
 
-      - name: Archive code coverage report 💾
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage
-          path: coverage
+      - name: Display coverage
+        uses: romeovs/lcov-reporter-action@v0.2.16
