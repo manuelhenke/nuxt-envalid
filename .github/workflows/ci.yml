@@ -82,7 +82,7 @@ jobs:
         run: yarn install --frozen-lockfile --immutable
 
       - name: Run tests 👀
-        run: yarn test --coverage
+        run: yarn test
 
       - name: Display coverage
         if: matrix.node-version == 16
