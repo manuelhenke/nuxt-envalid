@@ -33,22 +33,8 @@ jobs:
       url: https://www.npmjs.com/package/nuxt-envalid
 
     steps:
-      # The logic below handles the npm publication:
-      - uses: actions/checkout@v3
-
-      - name: tag major and minor versions
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/google-github-actions/release-please-action.git"
-          git tag -d v${{ needs.create-release.outputs.major }} || true
-          git tag -d v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }} || true
-          git push origin :v${{ needs.create-release.outputs.major }} || true
-          git push origin :v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }} || true
-          git tag -a v${{ needs.create-release.outputs.major }} -m "Release v${{ needs.create-release.outputs.major }}"
-          git tag -a v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }} -m "Release v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }}"
-          git push origin v${{ needs.create-release.outputs.major }}
-          git push origin v${{ needs.create-release.outputs.major }}.${{ needs.create-release.outputs.minor }}
+      - name: Checkout 🛎
+        uses: actions/checkout@v3
 
       - name: Setup node env 🏗
         id: setup
