@@ -4,17 +4,4 @@ on: [pull_request_target, issues]
 
 jobs:
   greeting:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
-    steps:
-      - uses: actions/first-interaction@v1
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: |
-            Thank you for posting an issue!
-
-            As a reminder, have you checked out the [code of conduct](https://github.com/manuelhenke/.github/blob/main/CODE_OF_CONDUCT.md)?
-          pr-message: |
-            Thank you for your first contribution to the project! Someone will look at your request as soon as possible. In the meantime, check that your PR meets the [contributor guidelines](https://github.com/manuelhenke/.github/blob/main/CONTRIBUTING.md). This will make it easier to review the code and speed up the merge. Thank you!
+    uses: manuelhenke/.github/.github/workflows/greetings.yml@main
