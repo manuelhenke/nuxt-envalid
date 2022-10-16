@@ -52,7 +52,7 @@
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@types/jest": "^29.1.2",
-    "@types/node": "^16.11.65",
+    "@types/node": "^16.11.66",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
