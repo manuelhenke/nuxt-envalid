@@ -57,7 +57,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-sonarjs": "^0.16.0",
-    "husky": "^8.0.1",
+    "husky": "^8.0.2",
     "jest": "^26.0.20s",
     "nuxt": "^2.15.8",
     "prettier": "^2.7.1",
