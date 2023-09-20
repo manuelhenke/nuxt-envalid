@@ -39,7 +39,7 @@
     "serve-docs": "cd docs/ && bundle exec jekyll serve"
   },
   "dependencies": {
-    "envalid": "^7.3.1"
+    "envalid": "^8.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
