@@ -59,7 +59,7 @@
     "eslint-plugin-sonarjs": "^0.18.0",
     "husky": "^8.0.3",
     "jest": "^26.0.20s",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.0.0",
     "prettier": "^2.8.3",
     "siroc": "^0.16.0",
     "typescript": "^5.0.4"
